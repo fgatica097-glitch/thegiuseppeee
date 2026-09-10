@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The_giuseppeee_barbershop - Agenda tu hora</title>
+<style>
+body{margin:0;background:#0f0f0f;color:white;font-family:Arial;text-align:center}
+header{padding:30px;background:linear-gradient(#1a1a1a,#000)}
+h1{color:#ffcc00;letter-spacing:3px;margin:0}
+.horario{color:#aaa;margin-top:10px}
+.card{background:#1e1e1e;margin:20px auto;max-width:420px;padding:20px;border-radius:20px;border:1px solid #333}
+.precio{color:#ffcc00;font-size:22px;font-weight:bold}
+button{background:#ffcc00;color:black;border:none;padding:15px;width:100%;border-radius:12px;font-weight:bold;font-size:17px;cursor:pointer;margin-top:15px}
+input,select{width:100%;padding:12px;margin-top:12px;border-radius:10px;border:none;box-sizing:border-box;background:white;color:black}
+a{color:#ffcc00;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+<h1>THE_GIUSEPPEEE<br>BARBERSHOP</h1>
+<p class="horario">⏰ 11:00 - 21:00 hrs | Lun a Dom</p>
+<p><a href="https://instagram.com/The_giuseppeee_barbershop" target="_blank">@The_giuseppeee_barbershop</a></p>
+</header>
+
+<div class="card">
+<p class="precio">Todos los cortes 8.000</p>
+</div>
+
+<div class="card">
+<h3>📅 Agenda tu hora aquí</h3>
+<input type="text" id="nombre" placeholder="Tu nombre">
+<select id="tipo">
+<option>Corte en local - 8.000</option>
+</select>
+<select id="corte">
+<option>Degradado</option>
+<option>Clásico</option>
+<option>Mullet</option>
+<option>French Crop</option>
+<option>Low Fade / Mid Fade / High Fade</option>
+<option>Corte + Barba</option>
+<option>Otro</option>
+</select>
+<input type="date" id="fecha">
+<select id="hora">
+<option>11:00</option><option>12:00</option><option>13:00</option>
+<option>14:00</option><option>15:00</option><option>16:00</option>
+<option>17:00</option><option>18:00</option><option>19:00</option>
+<option>20:00</option><option>21:00</option>
+</select>
+<button onclick="agendar()">Agendar por WhatsApp 📲</button>
+</div>
+
+<script>
+function agendar(){
+let n=document.getElementById('nombre').value;
+let t=document.getElementById('tipo').value;
+let c=document.getElementById('corte').value;
+let f=document.getElementById('fecha').value;
+let h=document.getElementById('hora').value;
+if(!n||!f){alert('Mano pon tu nombre y fecha');return}
+let msg=Wena Giuseppe! Soy ${n} 💈%0AQuiero agendar: ${c}%0A${t}%0AEl día ${f} a las ${h}.%0A%0AQuedo atento!; window.open(https://wa.me/56963294182?text=${encodeURIComponent(msg)},'_blank');
+}
+</script>
+</body>
+</html>
